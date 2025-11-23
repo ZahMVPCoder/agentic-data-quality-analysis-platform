@@ -1,0 +1,16 @@
+product_id,product_name,category,price,quantity_sold,revenue,sale_date,region
+1,Laptop Pro 15,Electronics,1299.99,45,58499.55,2024-01-15,North
+2,Wireless Mouse,Electronics,29.99,230,6897.70,2024-01-16,East
+3,Office Chair,Furniture,249.99,67,16749.33,2024-01-17,West
+4,Standing Desk,Furniture,599.99,34,20399.66,2024-01-18,South
+5,USB-C Cable,Electronics,19.99,450,8995.50,2024-01-19,North
+6,Notebook Set,Office Supplies,12.99,180,2338.20,2024-01-20,East
+7,Coffee Mug,Office Supplies,8.99,320,2876.80,2024-01-21,West
+8,Monitor 27inch,Electronics,399.99,89,35599.11,2024-01-22,North
+9,Keyboard Mechanical,Electronics,129.99,156,20278.44,2024-01-23,South
+10,Pen Pack,Office Supplies,5.99,540,3234.60,2024-01-24,East
+11,Laptop Stand,Electronics,49.99,123,6148.77,2024-01-25,North
+12,Desk Lamp,Furniture,79.99,98,7839.02,2024-01-26,West
+13,Headphones,Electronics,199.99,178,35598.22,2024-01-27,South
+14,Webcam HD,Electronics,89.99,145,13048.55,2024-01-28,East
+15,File Cabinet,Furniture,189.99,42,7979.58,2024-01-29,North

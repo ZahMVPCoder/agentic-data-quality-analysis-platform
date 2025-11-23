@@ -1,0 +1,181 @@
+.home-container {
+  min-height: 100vh;
+  background: #ffffff;
+  padding: 1rem;
+}
+
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: white;
+  border: 2px solid #000000;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+}
+
+.nav-brand {
+  font-size: 1rem;
+  font-weight: normal;
+  color: #000000;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-link {
+  color: #000000;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: none;
+}
+
+.nav-link:hover {
+  color: #000000;
+  text-decoration: none;
+}
+
+.home-main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.upload-section {
+  text-align: center;
+  background: white;
+  padding: 1.5rem 2rem;
+  border: 2px solid #000000;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+}
+
+.upload-title {
+  font-size: 1.3rem;
+  font-weight: normal;
+  color: #000000;
+  margin-bottom: 0.25rem;
+}
+
+.upload-subtitle {
+  font-size: 0.95rem;
+  color: #000000;
+  margin-bottom: 1rem;
+}
+
+.recent-analyses {
+  background: #F5E6C8;
+  padding: 1.25rem;
+  border: 2px solid #000000;
+  border-radius: 12px;
+}
+
+.recent-analyses h2 {
+  font-size: 1rem;
+  font-weight: normal;
+  color: #000000;
+  margin-bottom: 0.75rem;
+  border-bottom: 1px solid #000000;
+  padding-bottom: 0.5rem;
+}
+
+.analyses-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.analysis-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  padding: 0;
+  background: transparent;
+  border-radius: 0;
+  border: none;
+}
+
+.file-icon {
+  font-size: 1.2rem;
+}
+
+.analysis-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.analysis-details strong {
+  color: #000000;
+  font-size: 0.9rem;
+}
+
+.score-badge {
+  color: #000000;
+  font-size: 0.85rem;
+  font-weight: normal;
+}
+
+.analysis-time {
+  color: #000000;
+  font-size: 0.8rem;
+}
+
+.quick-tips {
+  padding: 0.75rem;
+  background: transparent;
+  border-radius: 0;
+  border: none;
+  border-top: 1px solid #000000;
+  padding-top: 0.75rem;
+}
+
+.quick-tips strong {
+  color: #000000;
+  font-size: 0.85rem;
+  font-weight: normal;
+}
+
+.quick-tips p {
+  color: #000000;
+  font-size: 0.8rem;
+  margin-top: 0.25rem;
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .home-container {
+    padding: 1rem;
+  }
+
+  .home-header {
+    padding-top: 1rem;
+  }
+
+  .home-header h1 {
+    font-size: 1.75rem;
+  }
+
+  .home-header p {
+    font-size: 1rem;
+  }
+
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .feature-card {
+    padding: 1.25rem;
+  }
+
+  /* Ensure touch targets are at least 44x44px */
+  button {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}

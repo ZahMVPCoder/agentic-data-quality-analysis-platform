@@ -1,0 +1,97 @@
+.analysis-container {
+  min-height: 100vh;
+  background: var(--bg-secondary);
+  padding: 2rem;
+}
+
+.analysis-header {
+  max-width: 1400px;
+  margin: 0 auto 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.analysis-header h1 {
+  font-size: 2rem;
+  color: var(--text-primary);
+}
+
+.back-button {
+  padding: 0.75rem 1.5rem;
+  background: white;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+  border-radius: var(--radius-md);
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.back-button:hover {
+  background: var(--primary-color);
+  color: white;
+}
+
+.analysis-content {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.section {
+  margin-bottom: 2rem;
+}
+
+.loading,
+.error {
+  max-width: 600px;
+  margin: 4rem auto;
+  padding: 3rem;
+  background: white;
+  border-radius: var(--radius-lg);
+  text-align: center;
+  box-shadow: var(--shadow-md);
+}
+
+.loading {
+  color: var(--text-secondary);
+  font-size: 1.2rem;
+}
+
+.error {
+  color: var(--danger-color);
+  font-size: 1.1rem;
+}
+
+.error button {
+  margin-top: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  background: var(--primary-color);
+  color: white;
+  border-radius: var(--radius-md);
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .analysis-container {
+    padding: 1rem;
+  }
+
+  .analysis-header {
+    margin-bottom: 1rem;
+  }
+
+  .analysis-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .back-button {
+    padding: 0.65rem 1.25rem;
+    font-size: 0.95rem;
+  }
+
+  .section {
+    margin-bottom: 1rem;
+  }
+}

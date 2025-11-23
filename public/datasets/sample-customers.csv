@@ -1,0 +1,16 @@
+customer_id,first_name,last_name,email,phone,city,state,zip_code,signup_date,total_purchases,lifetime_value
+1001,John,Smith,john.smith@email.com,555-0101,New York,NY,10001,2023-03-15,12,2450.75
+1002,Sarah,Johnson,sarah.j@email.com,555-0102,Los Angeles,CA,90001,2023-04-22,8,1875.50
+1003,Michael,Brown,m.brown@email.com,555-0103,Chicago,IL,60601,2023-05-10,15,3240.80
+1004,Emily,Davis,emily.davis@email.com,555-0104,Houston,TX,77001,2023-06-18,5,890.25
+1005,David,Wilson,d.wilson@email.com,555-0105,Phoenix,AZ,85001,2023-07-25,20,4560.00
+1006,Lisa,Martinez,lisa.m@email.com,555-0106,Philadelphia,PA,19101,2023-08-30,9,1680.40
+1007,James,Anderson,james.a@email.com,555-0107,San Antonio,TX,78201,2023-09-12,7,1345.90
+1008,Jennifer,Taylor,jen.taylor@email.com,555-0108,San Diego,CA,92101,2023-10-05,11,2230.75
+1009,Robert,Thomas,r.thomas@email.com,555-0109,Dallas,TX,75201,2023-11-20,13,2890.50
+1010,Mary,Jackson,mary.j@email.com,555-0110,San Jose,CA,95101,2023-12-15,6,1120.30
+1011,William,White,w.white@email.com,555-0111,Austin,TX,78701,2024-01-08,4,675.80
+1012,Patricia,Harris,pat.harris@email.com,555-0112,Jacksonville,FL,32099,2024-01-22,10,2045.60
+1013,Richard,Martin,r.martin@email.com,,Columbus,OH,43085,2024-02-14,3,520.25
+1014,Linda,Thompson,linda.t@email.com,555-0114,Fort Worth,TX,76101,2024-03-01,16,3450.90
+1015,Charles,Garcia,c.garcia@email.com,555-0115,Charlotte,NC,28201,2024-03-18,14,2980.40
