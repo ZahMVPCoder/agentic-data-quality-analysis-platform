@@ -17,9 +17,9 @@ import { getAIInsights } from '../../lib/aiIntegration';
 import { saveAnalysisToHistory } from '../../lib/historyTracker';
 import '../../styles/AnalysisPage.css';
 
-export default function AnalysisPage() {
+export default function AnalysisPage({ analysis: initialAnalysis }) {
   const [data, setData] = useState(null);
-  const [analysis, setAnalysis] = useState(null);
+  const [analysisData, setAnalysisData] = useState(initialAnalysis || null);
   const [aiInsights, setAIInsights] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -36,7 +36,6 @@ export default function AnalysisPage() {
           return;
         }
 
-        // Parse CSV
         Papa.parse(csvData, {
           header: true,
           dynamicTyping: true,
@@ -44,29 +43,13 @@ export default function AnalysisPage() {
           complete: async (results) => {
             setData({ rows: results.data, fileName });
             
-            // Perform analysis
             const analysisResults = analyzeData(results.data);
-            setAnalysis(analysisResults);
+            setAnalysisData(analysisResults);
 
-            // Save to history
             saveAnalysisToHistory(fileName, analysisResults);
-
-            // Get AI insights with sample data for deeper analysis
-            try {
-              const analysisWithSample = {
-                ...analysisResults,
-                sampleData: results.data.slice(0, 5) // Include first 5 rows for AI to analyze
-              };
-              const insights = await getAIInsights(analysisWithSample);
-              setAIInsights(insights);
-            } catch (aiError) {
-              console.error('AI insights error:', aiError);
-              setAIInsights({ error: 'Unable to generate AI insights' });
-            }
-
             setIsLoading(false);
           },
-          error: (error) => {
+          error: () => {
             setError('Error parsing CSV file');
             setIsLoading(false);
           },
@@ -79,6 +62,16 @@ export default function AnalysisPage() {
 
     loadData();
   }, [router]);
+
+   useEffect(() => {
+    if (analysisData) {
+      getAIInsights(analysisData).then(setAIInsights);
+    }
+  }, [analysisData]);
+
+  if (isLoading) return <div className="analysis-container"><div className="loading">Analyzing your data...</div></div>;
+  if (error) return <div className="analysis-container"><div className="error">{error}</div><button onClick={() => router.push('/')}>Back to Home</button></div>;
+
 
   if (isLoading) {
     return (
@@ -102,51 +95,25 @@ export default function AnalysisPage() {
       <div className="analysis-container">
         <header className="analysis-header">
           <h1 onClick={() => router.push('/')} style={{ cursor: 'pointer' }}>Data Quality Analysis</h1>
-          <button onClick={() => router.push('/')} className="back-button">
-            ← Upload New File
-          </button>
+          <button onClick={() => router.push('/')} className="back-button">← Upload New File</button>
         </header>
 
-        {data && analysis && (
+        {data && analysisData && (
           <div className="analysis-content">
-            <section className="section">
-              <AnalysisHistory />
-            </section>
+            <section className="section"><AnalysisHistory /></section>
+            <section className="section"><QualityScore analysis={analysisData} /></section>
+            <section className="section"><DataPreview data={data.rows} fileName={data.fileName} /></section>
+            <section className="section"><AIInsights insights={aiInsights} /></section>
 
-            <section className="section">
-              <QualityScore analysis={analysis} />
-            </section>
-
-            <section className="section">
-              <DataPreview data={data.rows} fileName={data.fileName} />
-            </section>
-
-            {aiInsights && (
+            {(analysisData.anomalies?.length > 0 || analysisData.schemaIssues?.length > 0) && (
               <section className="section">
-                <AIInsights insights={aiInsights} />
+                <IssuesPanel anomalies={analysisData.anomalies || []} schemaIssues={analysisData.schemaIssues || []} />
               </section>
             )}
 
-            {(analysis.anomalies?.length > 0 || analysis.schemaIssues?.length > 0) && (
-              <section className="section">
-                <IssuesPanel 
-                  anomalies={analysis.anomalies || []} 
-                  schemaIssues={analysis.schemaIssues || []} 
-                />
-              </section>
-            )}
-
-            <section className="section">
-              <SQLRecommendations analysis={analysis} />
-            </section>
-
-            <section className="section">
-              <DataVisualizations analysis={analysis} />
-            </section>
-
-            <section className="section">
-              <ColumnDetails analysis={analysis} />
-            </section>
+            <section className="section"><SQLRecommendations analysis={analysisData} /></section>
+            <section className="section"><DataVisualizations analysis={analysisData} /></section>
+            <section className="section"><ColumnDetails analysis={analysisData} /></section>
           </div>
         )}
       </div>
