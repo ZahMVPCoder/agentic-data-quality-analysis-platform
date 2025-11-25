@@ -3,6 +3,73 @@
   border-radius: var(--radius-lg);
   padding: 2rem;
   box-shadow: var(--shadow-md);
+  max-width: 1200px;
+}
+
+.ai-insights h2 {
+  font-size: 1.75rem;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.ai-insights .error {
+  color: var(--danger-color);
+  padding: 1rem;
+  background: rgba(255, 59, 48, 0.1);
+  border-radius: var(--radius-md);
+}
+
+.insight-section {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: var(--bg-secondary);
+  border-radius: var(--radius-md);
+  border-left: 4px solid #10b981;
+}
+
+.insight-section h3 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.insight-section p {
+  color: var(--text-secondary);
+  line-height: 2;
+  font-size: 1.05rem;
+  margin: 0;
+  letter-spacing: 0.02em;
+  word-spacing: 0.1em;
+}
+
+.insight-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.insight-section ul li {
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.75rem;
+  background: white;
+  border-radius: var(--radius-sm);
+  line-height: 1.6;
+  color: var(--text-secondary);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease;
+}
+
+.insight-section ul li:hover {
+  transform: translateX(5px);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.insight-section ul li:last-child {
+  margin-bottom: 0;
 }
 
 .insights-header {

@@ -1,4 +1,9 @@
 export async function getAIInsights(analysis) {
+  if (!analysis || !analysis.summary || !analysis.columns) {
+    console.error("Invalid analysis object:", analysis);
+    return { error: "Analysis object is missing required fields" };
+  }
+
   try {
     const res = await fetch("/api/ai-insights", {
       method: "POST",

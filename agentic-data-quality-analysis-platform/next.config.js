@@ -1,5 +1,4 @@
 /** @type {import('next').NextConfig} */
-/** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
   
@@ -14,14 +13,6 @@ const nextConfig = {
   // Optimize images
   images: {
     formats: ['image/webp', 'image/avif'],
-  },
-  
-  webpack: (config) => {
-    config.resolve.fallback = {
-      ...config.resolve.fallback,
-      fs: false,
-    };
-    return config;
   },
   
   // Add headers for performance
