@@ -15,6 +15,15 @@ const nextConfig = {
     formats: ['image/webp', 'image/avif'],
   },
   
+  // Ensure proper resolution of webpack modules
+  webpack: (config) => {
+    config.resolve.fallback = {
+      ...config.resolve.fallback,
+      fs: false,
+    };
+    return config;
+  },
+  
   // Add headers for performance
   async headers() {
     return [
